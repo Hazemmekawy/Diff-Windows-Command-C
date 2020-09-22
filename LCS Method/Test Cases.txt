@@ -1,0 +1,178 @@
+TEST DATA 1:
+
+file 1:			
+----------------   
+Ubuntu
+Arch Linux
+Debian
+CentOS
+Fedora
+
+
+file 2:			
+----------------    
+Kubuntu
+Ubuntu
+Debian
+Arch Linux
+Centos
+Fedora
+
+
+Expected Output:
+---------------- 
++Kubuntu
+ Ubuntu
+-Arch Linux
+ Debian
+-CentOS
++Arch Linux
++Centos
+ Fedora
+ 
+/////////////////////////////////////////////////////////////////////
+ 
+TEST DATA 2:
+
+file 1:			
+----------------   
+apples
+oranges
+kiwis
+carrots
+
+
+file 2:			
+----------------    
+apples
+kiwis
+carrots
+grapefruits
+
+
+Expected Output:
+---------------- 
+ apples
+-oranges
+ kiwis
+ carrots
++grapefruits
+
+/////////////////////////////////////////////////////////////////////
+
+TEST DATA 3:
+
+file 1:			
+---------------- 
+Hazem Mekawy
+Dexter Fawzy
+Peter george
+Manga Alfons
+
+
+file 2:			
+---------------- 
+Bteee5a
+Hazem Mekawy
+Dexter Fawzy
+Peter grge
+Manga Alf
+
+
+Expected Output:
+---------------- 
++Bteee5a
+ Hazem Mekawy
+ Dexter Fawzy
+-Peter george
+-Manga Alfons
++Peter grge
++Manga Alf
+
+
+/////////////////////////////////////////////////////////////////////
+
+TEST DATA 4:
+
+file 1:			
+---------------- 
+a
+b
+c
+
+
+file 2:			
+---------------- 
+a
+d
+
+
+Expected Output:
+---------------- 
+ a
+-b
+-c
++d
+
+/////////////////////////////////////////////////////////////////////
+
+TEST DATA 5: (Long data)
+
+file 1:			
+----------------
+Here i got on the journey for the first time,
+to be with the people i
+Love and adore.
+Long time no see.
+
+
+file 2:			
+----------------
+Here i got on the journey for the first time,
+Sag me name.
+to be with the people i
+My name is Heisenberg
+Love and adore.
+Long time no see.
+
+
+Expected Output:
+---------------- 
+ Here i got on the journey for the first time,
++Sag me name.
+ to be with the people i
++My name is Heisenberg
+ Love and adore.
+ Long time no see.
+ 
+ 
+/////////////////////////////////////////////////////////////////////
+
+TEST DATA 6: (Special Characters)
+
+file 1:			
+----------------
+%^$#$#Hazem
+%&#@((%(&@#*Dexter
+)()%*($45876
+
+
+file 2:			
+----------------
+%^$#$#Hazem
+%&#@((%(&@#*Dexter
+541289^$#(*$#%(
+)()%*($45876 ^%%#$
+1123^#$#%#$#%
+
+
+Expected Output:
+----------------
+ %^$#$#Hazem
+ %&#@((%(&@#*Dexter
+-)()%*($45876
++541289^$#(*$#%(
++)()%*($45876 ^%%#$
++1123^#$#%#$#%
+
+ 
